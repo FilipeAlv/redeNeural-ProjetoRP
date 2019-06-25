@@ -5,7 +5,8 @@ import java.util.Random;
 public class RedeNeural {
 
 	private double[] pesos;
-	private double bias;
+	private double taxaApren;
+	private double txApren;
 
 	double erro=0;
 
@@ -36,7 +37,7 @@ public class RedeNeural {
 		for(int i = 0; i < pesos.length; i++) {
 			pesos[i] = -1 + (1 - (-1)) * r.nextDouble();
 		}
-		bias = r.nextDouble()*0.001;
+		txApren = r.nextDouble()*0.001;
 		
 	}
 
@@ -119,7 +120,7 @@ public class RedeNeural {
 
 			double  pesoNovoEntrada[][] = new double[quantNeuronios][entradas[0].length];
 			for (int i = quantNeuronios-1; i >=0 ; i--) {
-				pesos[p] = (pesos[p]*momento) + pesosNovo[i]*bias;
+				pesos[p] = (pesos[p]*momento) + pesosNovo[i]*taxaApren;
 				p--;
 				for (int j = 0; j < entradas[0].length; j++) {
 					for (int k = 0; k < entradas.length; k++) {
@@ -131,7 +132,7 @@ public class RedeNeural {
 			p = pesos.length-quantNeuronios-1;
 			for (int i = pesoNovoEntrada.length-1; i >=0; i--) {
 				for (int j = pesoNovoEntrada[0].length-1; j >=0 ; j--) {
-					pesos[p] = (pesos[p]*momento) + pesoNovoEntrada[i][j]*bias;
+					pesos[p] = (pesos[p]*momento) + pesoNovoEntrada[i][j]*taxaApren;
 					p--;
 				} 
 			}

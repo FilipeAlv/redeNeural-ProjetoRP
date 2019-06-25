@@ -33,7 +33,7 @@ public class Main {
 		int percentEntradas = Dados.ROWS * 80 / 100;
 		int percentEntradasTeste = Dados.ROWS-percentEntradas;
 
-		entradas = new double[percentEntradas][Dados.COLS];
+		entradas = new double[percentEntradas+1][Dados.COLS];
 		saidas = new double[percentEntradas];
 
 		entradasTeste = new double[percentEntradasTeste][Dados.COLS];
