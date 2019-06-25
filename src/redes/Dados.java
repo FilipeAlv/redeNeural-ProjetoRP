@@ -16,7 +16,7 @@ public class Dados {
 	private static boolean is_data;
 
 	public static void pegarDados() {
-		String nome="/media/filipe/00844E3F844E3784/Windows.old/Users/FilipeAlves/Desktop/redes/src/redes/cancer.txt";
+		String nome="/media/filipe/9C6CC06E6CC0452C/DOCUMENTOS/FACULDADE/DISCIPLINAS/6 PERIODO/RP/redeNeural-ProjetoRP/src/redes/cancer.txt";
 		ATTRIBUTES = new ArrayList<String>();
 
 		try {
@@ -58,7 +58,7 @@ public class Dados {
 					SAIDAS[row]= (letra.equals("B")?0:1);
 				}else {
 					String valor = linha.substring(point+1, i);
-					ENTRADAS[row][quantVirgulas-2] = Double.parseDouble(valor);
+					ENTRADAS[row][quantVirgulas-2] = Double.parseDouble(valor)*0.01;
 				}
 				quantVirgulas++;
 				point=i;

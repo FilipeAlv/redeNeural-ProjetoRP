@@ -14,17 +14,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		Dados.pegarDados();
-		pegarEntradasSaidas();
-
-//				for (int i = 0; i < entradasTeste.length; i++) {
-//					for (int j = 0; j < entradasTeste[0].length; j++) {
-//						System.out.print(entradasTeste[i][j]);
-//					}
-//					System.out.println();
-//				}
-		//		
+		pegarEntradasSaidas();			
+		
+		double entradasT[][] = {{0,0},{0,1},{1,0},{1,1}};
+		double saidasT[] = {0,1,1,0};
+		
+		
 		System.out.println("============Treinando==========");
-		RedeNeural rn = new RedeNeural(entradas, 3000);
+		RedeNeural rn = new RedeNeural(entradas, 1000,1, 4);
 		rn.treinar(saidas);
 
 		System.out.println("============Teste==========");
