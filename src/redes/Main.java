@@ -20,8 +20,8 @@ public class Main {
 		double saidasT[] = {0,1,1,0};
 		
 		
-		System.out.println("============Treinando==========");
-		RedeNeural rn = new RedeNeural(entradas, 1000,1, 4);
+		System.out.println("=========Treinando==============");
+		RedeNeural rn = new RedeNeural(entradas, 3000,1, 3);
 		rn.treinar(saidas);
 
 		System.out.println("============Teste==========");
@@ -33,7 +33,7 @@ public class Main {
 		int percentEntradas = Dados.ROWS * 80 / 100;
 		int percentEntradasTeste = Dados.ROWS-percentEntradas;
 
-		entradas = new double[percentEntradas+1][Dados.COLS];
+		entradas = new double[percentEntradas][Dados.COLS];
 		saidas = new double[percentEntradas];
 
 		entradasTeste = new double[percentEntradasTeste][Dados.COLS];
